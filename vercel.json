@@ -1,1 +1,12 @@
-{"rewrites": [{ "source": "/(.*)", "destination": "/api/index" }]}
+{
+  "functions": {
+    "api/gatekeeper.js": {
+      "maxDuration": 60,
+      "includeFiles": "circuit/**"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/gatekeeper", "destination": "/api/gatekeeper" },
+    { "source": "/(.*)", "destination": "/api/index" }
+  ]
+}
